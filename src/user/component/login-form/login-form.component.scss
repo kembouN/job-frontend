@@ -1,0 +1,15 @@
+form{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 20px;
+  left: auto;
+  border: 2px solid rebeccapurple;
+  align-items: center;
+}
+.send{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+

@@ -1,0 +1,59 @@
+<app-custom-modal [isCentered]="true" [isVisible]="false" [modalTitle]="modalTitle" [width]="500">
+  <form (ngSubmit)="onSubmit() ">
+    <div class="fields">
+      <app-custom-input
+        [id]="nameLibelle"
+        [type]="type"
+        [required]="required"
+        [name]="nameLibelle"
+        [label]="labelLibelle"
+        [placeholder]="placeHolderLibelle"
+        [inputWidth]="inputWidth"
+        [inputHeight]="inputHeight"
+      ></app-custom-input>
+      <app-custom-input
+        [id]="nameCode"
+        [type]="type"
+        [required]="required"
+        [name]="nameCode"
+        [label]="labelCode"
+        [placeholder]="placeHolderCode"
+        [inputWidth]="inputWidth"
+        [inputHeight]="inputHeight"
+      ></app-custom-input>
+    </div>
+
+    <div class="boutons">
+      <app-custom-button
+        [type]="typeButton"
+        [textSize]="textSize"
+        [disabled]="disableButton"
+        [width]="buttonWidth"
+        [height]="buttonHeight"
+        [left]="marginButtonLeft"
+        [rigth]="marginButtonRigth"
+        [bottom]="marginButtonBottom"
+        [top]="marginButtonTop"
+        [color]="cancelButtonColor"
+        [text]="cancel"
+        [borderRadius]="buttonBorderRadius"
+      ></app-custom-button>
+      <app-custom-button
+        [type]="typeSubmit"
+        [textSize]="textSize"
+        [disabled]="disableSubmit"
+        [width]="buttonWidth"
+        [height]="buttonHeight"
+        [left]="marginButtonLeft"
+        [rigth]="marginButtonRigth"
+        [bottom]="marginButtonBottom"
+        [top]="marginButtonTop"
+        [color]="submitButtonColor"
+        [text]="save"
+        [borderRadius]="buttonBorderRadius"
+
+      ></app-custom-button>
+    </div>
+  </form>
+
+</app-custom-modal>

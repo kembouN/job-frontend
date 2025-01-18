@@ -1,0 +1,11 @@
+<div class="modal" >
+  <header>
+    <app-custom-button [borderRadius]="50" [text]="'X'" [disabled]="false" [type]="'button'" [textSize]="1" class="closeButton">
+    </app-custom-button>
+    <p [style.font-size.rem]="">
+      {{modalTitle()}}
+    </p>
+  </header>
+
+  <ng-content class="modal-content"></ng-content>
+</div>

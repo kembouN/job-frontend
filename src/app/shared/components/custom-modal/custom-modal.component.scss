@@ -1,0 +1,23 @@
+.modal{
+  border: 2px solid green;
+  padding: 5px 10px 5px 10px;
+  width: 30%;
+}
+
+header{
+  border-bottom: 2px solid rgb(228, 228, 228);
+  margin-bottom: 20px;
+  padding-bottom: 0;
+}
+
+app-custom-button{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.modal-content{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}

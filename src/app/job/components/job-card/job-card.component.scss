@@ -1,0 +1,50 @@
+.job-block {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(226, 225, 225, 0.4);
+  border-radius: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 20%;
+}
+
+.head-info, .job-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.sub-head{
+  display: flex;
+  flex-direction: row;
+}
+
+.head-text{
+  margin-left: 10px;
+}
+.enterp-name, .job-title, .salary{
+  font-weight: bold;
+  font-size: larger;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 40px;
+
+  p{
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+.small-info{
+  font-size: small;
+  opacity: 0.4;
+}
+

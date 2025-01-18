@@ -1,0 +1,27 @@
+
+<div class="input-block">
+  @if (label()) {
+    <label [for]="name()" [style.font-size.rem]="labelSize()">{{label()}} @if (required()) {
+      <span>*</span>
+    }
+    </label>
+  }
+
+  <input
+
+    [type]="type()"
+    [name]="name()"
+    [placeholder]="placeholder()"
+    [disabled]="disabled()"
+    (change)="onChange.emit($event.returnValue)"
+    [required] ="required()"
+    [disabled]="disabled()"
+    [style.width.px]="inputWidth()"
+    [style.height.px]="inputHeight()"
+  >
+  @if (errorMessage()) {
+    <p class="error-message" [style.font-size.rem]="errorSize()">{{errorMessage()}}</p>
+  }
+</div>
+
+
