@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-custom-modal',
@@ -9,7 +10,7 @@ import { CustomButtonComponent } from "../custom-button/custom-button.component"
 })
 export class CustomModalComponent {
 
-  isVisible = input<boolean>(false);
+  isVisible = input.required<boolean>();
   isCentered = input.required<boolean>();
   width = input.required<number>();
   height = input<number | string>();

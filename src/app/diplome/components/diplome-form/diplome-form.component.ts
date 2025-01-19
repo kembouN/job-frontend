@@ -14,6 +14,7 @@ export class DiplomeFormComponent{
 
   diplomeRequest!: DiplomeRequest;
 
+  modalVisible = false;
   nameLibelle = "libelle";
   placeHolderLibelle = "Baccalaureat, Brevet d'Etude du..."
   labelLibelle = "Libelle du diplome";
@@ -43,8 +44,16 @@ export class DiplomeFormComponent{
   modalTitle ="Ajouter un nouveau diplome";
 
 
-  onSubmit(){
-
+  toggleModal(){
+    if(!this.modalVisible){
+      this.modalVisible = true;
+    }else {
+      this.modalVisible = false
+    }
+    console.log(this.modalVisible);
   }
 
+  onSubmit(){
+    
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-custom-icon',
@@ -8,8 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CustomIconComponent {
 
-  @Input() id!:number;
-  @Input() borderRadius!:number;
-  @Input() class!: string;
-  @Input() color!: string;
+  id= input<number>();
+  borderRadius= input<number>();
+  class= input<string>();
+  color= input<string>();
+  
 }
