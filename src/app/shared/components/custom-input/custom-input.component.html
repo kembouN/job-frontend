@@ -18,6 +18,7 @@
     [disabled]="disabled()"
     [style.width.px]="inputWidth()"
     [style.height.px]="inputHeight()"
+    [style.border-radius.px]="borderRadius()"
   >
   @if (errorMessage()) {
     <p class="error-message" [style.font-size.rem]="errorSize()">{{errorMessage()}}</p>

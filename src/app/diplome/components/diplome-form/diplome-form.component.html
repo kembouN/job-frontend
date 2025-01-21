@@ -1,4 +1,4 @@
-<app-custom-modal [isCentered]="true" [isVisible]="true" [modalTitle]="modalTitle" [width]="500">
+<app-custom-modal [isCentered]="true" [isVisible]="modalVisible" [modalTitle]="modalTitle">
   <form (ngSubmit)="onSubmit() ">
     <div class="fields">
       <app-custom-input
@@ -28,9 +28,9 @@
         [type]="typeButton"
         [textSize]="textSize"
         [disabled]="disableButton"
-        [width]="buttonWidth"
+        [width]="buttonCancelWidth"
         [height]="buttonHeight"
-        [left]="marginButtonLeft"
+        [left]="marginCancelButtonLeft"
         [rigth]="marginButtonRigth"
         [bottom]="marginButtonBottom"
         [top]="marginButtonTop"
@@ -42,9 +42,9 @@
         [type]="typeSubmit"
         [textSize]="textSize"
         [disabled]="disableSubmit"
-        [width]="buttonWidth"
+        [width]="buttonSubmitWidth"
         [height]="buttonHeight"
-        [left]="marginButtonLeft"
+        [left]="marginSubmitButtonLeft"
         [rigth]="marginButtonRigth"
         [bottom]="marginButtonBottom"
         [top]="marginButtonTop"

@@ -10,6 +10,7 @@
   [style.margin-bottom.px]="bottom()"
   [style.margin-top.px]="top()"
   [style.border-radius.%]="borderRadius()"
+  (click)="onClick.emit()"
 >
   {{text()}}
 </button>

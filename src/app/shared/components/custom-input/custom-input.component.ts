@@ -20,6 +20,7 @@ export class CustomInputComponent {
   errorSize = input<number>(0.6);
   inputWidth = input.required<number>();
   inputHeight = input.required<number>();
+  borderRadius = input<number>();
   @Output() onChange !: any;
   @Output() onBlur !: any;
   @Output() onKeyDown !: any;

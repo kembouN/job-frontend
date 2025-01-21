@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, linkedSignal, output } from '@angular/core';
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
 import { NgIf } from '@angular/common';
 
@@ -12,8 +12,13 @@ export class CustomModalComponent {
 
   isVisible = input.required<boolean>();
   isCentered = input.required<boolean>();
-  width = input.required<number>();
-  height = input<number | string>();
   modalTitle = input.required<string>();
+  showChange = output<boolean>();
+  _isVisible = linkedSignal(() => this.isVisible());
 
+  closeModal(){
+    this._isVisible.set(false);
+  }
+
+  //TODO: manage modal by adding a close modal feature
 }

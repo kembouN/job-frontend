@@ -14,7 +14,7 @@ export class DiplomeFormComponent{
 
   diplomeRequest!: DiplomeRequest;
 
-  modalVisible = false;
+  modalVisible = true;
   nameLibelle = "libelle";
   placeHolderLibelle = "Baccalaureat, Brevet d'Etude du..."
   labelLibelle = "Libelle du diplome";
@@ -32,11 +32,13 @@ export class DiplomeFormComponent{
   save = "Enregistrer"
   disableButton = false;
   disableSubmit = true;
-  buttonWidth = 80;
+  buttonSubmitWidth = 90;
+  buttonCancelWidth = 80;
   buttonHeight = 35;
   marginButtonTop = 5;
   marginButtonRigth = 5;
-  marginButtonLeft = 30;
+  marginCancelButtonLeft = 10;
+  marginSubmitButtonLeft = 30;
   marginButtonBottom = 5;
   cancelButtonColor = "rgb(226, 225, 225, 0.4)";
   submitButtonColor = "rgb(27, 213, 27, 0.8)";
@@ -44,6 +46,9 @@ export class DiplomeFormComponent{
   modalTitle ="Ajouter un nouveau diplome";
 
 
+  close(){
+    this.modalVisible = false;
+  }
   toggleModal(){
     if(!this.modalVisible){
       this.modalVisible = true;
@@ -54,6 +59,6 @@ export class DiplomeFormComponent{
   }
 
   onSubmit(){
-    
+
   }
 }

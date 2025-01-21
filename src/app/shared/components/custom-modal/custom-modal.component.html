@@ -1,11 +1,18 @@
-<div class="modal" >
-  <header>
-    <app-custom-button [borderRadius]="50" [text]="'X'" [disabled]="false" [type]="'button'" [textSize]="1" >
-    </app-custom-button>
-    <h3 [style.font-size.rem]="">
-      {{modalTitle()}}
-    </h3>
-  </header>
+@if(_isVisible()){
+  <ng-container >
+    <div class="modal" >
+      <header>
+        <app-custom-button [borderRadius]="50" [text]="'X'" [disabled]="false" [type]="'button'" [textSize]="1" (onClick)="closeModal()">
+        </app-custom-button>
+        <h3>
+          {{modalTitle()}}
+        </h3>
+      </header>
 
-  <ng-content></ng-content>
-</div>
+      <div class="content">
+        <ng-content></ng-content>
+      </div>
+      <div class="backdrop"></div>
+    </div>
+  </ng-container >
+}

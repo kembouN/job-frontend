@@ -1,7 +1,14 @@
 .modal{
-  border: 2px solid green;
-  padding: 5px 10px 5px 10px;
-  width: 30%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(226, 225, 225, 0.2);
+  padding: 1rem;
+  width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 20;
 }
 
 header{
@@ -13,12 +20,8 @@ header{
 app-custom-button{
   display: flex;
   flex-direction: row-reverse;
-  cursor: pointer;
 }
 
-.modal-content{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+::ng-deep app-custom-button .custom-default {
+  cursor: pointer;
 }

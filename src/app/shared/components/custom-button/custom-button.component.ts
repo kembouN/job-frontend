@@ -1,4 +1,4 @@
-import { Component, input} from '@angular/core';
+import { Component, input, output} from '@angular/core';
 
 @Component({
   selector: 'app-custom-button',
@@ -20,5 +20,6 @@ export class CustomButtonComponent {
   type = input.required<string>();
   color = input<string>();
   borderRadius = input<number>();
+  onClick = output();
 
 }
