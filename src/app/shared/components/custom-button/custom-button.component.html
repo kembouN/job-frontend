@@ -12,5 +12,9 @@
   [style.border-radius.%]="borderRadius()"
   (click)="onClick.emit()"
 >
-  {{text()}}
+  @if (text()){
+    {{text()}}
+  }@else{
+    <ng-content ></ng-content>
+  }
 </button>

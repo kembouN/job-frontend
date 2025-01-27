@@ -8,7 +8,7 @@ import { Component, input, output} from '@angular/core';
 })
 export class CustomButtonComponent {
 
-  text = input.required<string>();
+  text = input<string>();
   textSize = input<number>();
   disabled = input<boolean>();
   width = input<number>();

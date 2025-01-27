@@ -1,31 +1,48 @@
 <app-custom-modal [isCentered]="true" [isVisible]="modalVisible" [modalTitle]="modalTitle">
-  <form (ngSubmit)="onSubmit() ">
+  <form #diplomeForm="ngForm" (ngSubmit)="onSubmit() ">
     <div class="fields">
-      <app-custom-input
-        [id]="nameLibelle"
-        [type]="type"
-        [required]="required"
-        [name]="nameLibelle"
-        [label]="labelLibelle"
-        [placeholder]="placeHolderLibelle"
-        [inputWidth]="inputWidth"
-        [inputHeight]="inputHeight"
-      ></app-custom-input>
-      <app-custom-input
-        [id]="nameCode"
-        [type]="type"
-        [required]="required"
-        [name]="nameCode"
-        [label]="labelCode"
-        [placeholder]="placeHolderCode"
-        [inputWidth]="inputWidth"
-        [inputHeight]="inputHeight"
-      ></app-custom-input>
+      <div>
+        <label for="libelle">Libellé du diplôme @if(required){ <span>*</span>}</label>
+        <input
+          type="text"
+          (change)="onChange($event)"
+          name="libelle" id="libelle"
+          required [(ngModel)]="initialDiplome.libelle"
+          [placeholder]="placeHolderLibelle"
+          [style.height.px]="inputHeight"
+          [style.width.px]="inputWidth"
+          #libelle="ngModel"
+        >
+        @if(libelle.invalid && (libelle.dirty || libelle.touched)){
+          <div>
+            @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+          </div>
+        }
+      </div>
+      <div>
+        <label for="code">Code du diplôme @if(required){ <span>*</span>}</label>
+        <input
+          type="text"
+          (change)="onChange($event)"
+          name="code"
+          id="code"
+          required
+          [placeholder]="placeHolderCode"
+          [(ngModel)]="initialDiplome.code"
+          [style.height.px]="inputHeight"
+          [style.width.px]="inputWidth"
+          #code="ngModel"
+        >
+        @if(code.invalid && (code.dirty || code.touched)){
+          <div>
+            @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+          </div>
+        }      </div>
     </div>
 
     <div class="boutons">
       <app-custom-button
-        [type]="typeButton"
+        [type]="typeReset"
         [textSize]="textSize"
         [disabled]="disableButton"
         [width]="buttonCancelWidth"
@@ -51,7 +68,7 @@
         [color]="submitButtonColor"
         [text]="save"
         [borderRadius]="buttonBorderRadius"
-
+        (onClick)="onSubmit()"
       ></app-custom-button>
     </div>
   </form>

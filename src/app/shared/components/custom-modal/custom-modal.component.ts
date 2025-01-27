@@ -20,5 +20,5 @@ export class CustomModalComponent {
     this._isVisible.set(false);
   }
 
-  //TODO: manage modal by adding a close modal feature
+  //TODO: manage by adding a open modal's feature
 }

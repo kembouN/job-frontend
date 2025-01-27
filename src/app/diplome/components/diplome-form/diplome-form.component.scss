@@ -6,6 +6,32 @@ form
   align-items: center
 }
 
+.fields{
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+  padding: auto;
+  label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: block;
+  }
+  input{
+    padding: 5px;
+    margin: 5px;
+    border: none;
+    background-color: rgb(226, 225, 225, 0.7);
+    &:focus{
+      border-radius: 3%;
+      outline: solid 2px rgb(27, 213, 27, 0.8);
+    }
+  }
+}
+.error-message{
+  color: red;
+  font-style: italic;
+  margin: 0;
+}
+
 .boutons{
   margin-top: 20px;
 }

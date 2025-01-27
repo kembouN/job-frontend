@@ -8,9 +8,8 @@ import { Component, input } from '@angular/core';
 })
 export class CustomIconComponent {
 
-  id= input<number>();
+  id= input<string>();
   borderRadius= input<number>();
   class= input<string>();
   color= input<string>();
-  
 }

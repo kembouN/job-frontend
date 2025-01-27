@@ -1,29 +1,31 @@
 import { Component } from '@angular/core';
 import { DiplomeRequest } from '../../models/diplome';
-import { CustomInputComponent } from "../../../shared/components/custom-input/custom-input.component";
 import { CustomButtonComponent } from "../../../shared/components/custom-button/custom-button.component";
 import { CustomModalComponent } from "../../../shared/components/custom-modal/custom-modal.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-diplome-form',
-  imports: [CustomInputComponent, CustomButtonComponent, CustomModalComponent],
+  imports: [FormsModule, CustomButtonComponent, CustomModalComponent],
   templateUrl: './diplome-form.component.html',
   styleUrl: './diplome-form.component.scss'
 })
 export class DiplomeFormComponent{
 
-  diplomeRequest!: DiplomeRequest;
+  diplomeRequest?: DiplomeRequest;
+
+  initialDiplome = {
+    libelle:  "",
+    code: ""
+  };
 
   modalVisible = true;
-  nameLibelle = "libelle";
   placeHolderLibelle = "Baccalaureat, Brevet d'Etude du..."
   labelLibelle = "Libelle du diplome";
   type = "text";
   required = true;
-  nameCode = "code";
-  labelCode = "Code du diplome";
   placeHolderCode = "BACC, BACC+2, BEPC..."
-  typeButton = "button";
+  typeReset = "reset";
   typeSubmit = "submit";
   textSize = 1;
   inputWidth = 200;
@@ -49,16 +51,15 @@ export class DiplomeFormComponent{
   close(){
     this.modalVisible = false;
   }
-  toggleModal(){
-    if(!this.modalVisible){
-      this.modalVisible = true;
-    }else {
-      this.modalVisible = false
-    }
-    console.log(this.modalVisible);
+
+  onChange(e: Event){
+    let value = e.target as HTMLInputElement
+    console.log(value.value)
   }
+
 
   onSubmit(){
-
+    console.log(this.initialDiplome);
   }
+
 }

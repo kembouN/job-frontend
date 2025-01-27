@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { DiplomeFormComponent } from "./diplome/components/diplome-form/diplome-form.component";
+import { LandingContentComponent } from "./landing/components/landing-content/landing-content.component";
+import { JobCardComponent } from "./job/components/job-card/job-card.component";
 
 @Component({
   selector: 'app-root',
-  imports: [DiplomeFormComponent],
+  imports: [LandingContentComponent, JobCardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

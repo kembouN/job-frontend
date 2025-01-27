@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { JobResponse } from '../../models/job';
 import { CustomIconComponent } from '../../../shared/components/custom-icon/custom-icon.component';
 import { CustomImageComponent } from '../../../shared/components/custom-image/custom-image.component';
@@ -11,10 +11,8 @@ import { CustomImageComponent } from '../../../shared/components/custom-image/cu
 })
 export class JobCardComponent {
 
-  @Input() saveIcon!: CustomIconComponent;
-  @Input() userIcon!: CustomIconComponent;
-  @Input() imageWidth!: number;
-  @Input() imageHeight!: number;
-  @Input() imageBorderRadius!: number;
-  @Input() job!: JobResponse;
+  imageWidth= input<number>();
+  imageHeight= input<number>();
+  imageBorderRadius= input<number>();
+  job = input.required<JobResponse>();
 }

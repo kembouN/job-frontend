@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-custom-image',
@@ -9,11 +9,10 @@ import { Component, Input } from '@angular/core';
 
 export class CustomImageComponent {
 
-  @Input() id!: number;
-  @Input() width!: number;
-  @Input() height!: number;
-  @Input() source?: string;
-  @Input() alt!: string;
-  @Input() borderRadius!: number;
+  width= input<number>();
+  height= input<number>();
+  source = input<string>();
+  alt= input<string>();
+  borderRadius= input<number>();
 
 }

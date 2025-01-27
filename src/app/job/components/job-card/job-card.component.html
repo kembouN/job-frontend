@@ -1,30 +1,30 @@
-<div class="job-block">
+<div class="job()-block">
   <div class="head-info">
     <div class="sub-head">
-      @if (!job.recruiterImage) {
+      @if (!job().recruiterImage) {
         <app-custom-icon [class]="'fas fa-user fa-2x'" [color]="'rgb(226, 225, 225, 0.4)'"></app-custom-icon>
       }@else {
-        <app-custom-image [source]="job.recruiterImage" [alt]="job.recruiter" [width]="imageWidth" [height]="imageHeight" [borderRadius]="imageBorderRadius"></app-custom-image>
+        <app-custom-image [source]="job().recruiterImage" [alt]="job().recruiter" [width]="imageWidth()" [height]="imageHeight()" [borderRadius]="imageBorderRadius()"></app-custom-image>
       }
       <p class="head-text">
-        <span class="enterp-name">{{job.recruiter}}</span> <br> <span class="small-info">{{job.localisation.at(0)}}</span>
+        <span class="enterp-name">{{job().recruiter}}</span> <br> <span class="small-info">{{job().localisation.at(0)}}</span>
       </p>
     </div>
     <app-custom-icon [class]="'fas fa-bookmark save'"></app-custom-icon>
   </div>
 
-  <div class="job-info">
+  <div class="job()-info">
     <p>
-      <span class="job-title">{{job.jobTitle}}</span> <br> <span class="small-info">{{job.uploadDate}}</span>
+      <span class="job()-title">{{job().jobTitle}}</span> <br> <span class="small-info">{{job().uploadDate}}</span>
     </p>
     <p>
-      <span class="salary">{{job.salary}}</span>/m <br> <span class="small-info">{{job.totalCandidat}}</span>
+      <span class="salary">{{job().salary}}</span>/m <br> <span class="small-info">{{job().totalCandidat}}</span>
     </p>
   </div>
 
   <div class="footer-info">
-    <p>{{job.isFullTime}}</p>
-    <p>{{job.isRemote}}</p>
-    <p>{{job.levels.at(0)?.libelle}}</p>
+    <p>{{job().isFullTime}}</p>
+    <p>{{job().isRemote}}</p>
+    <p>{{job().levels.at(0)?.libelle}}</p>
   </div>
 </div>
