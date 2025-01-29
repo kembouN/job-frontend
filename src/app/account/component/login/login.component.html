@@ -1,0 +1,36 @@
+<div class="container">
+
+  <p class="logo">
+    <span>JF.</span>JobFinder.
+  </p>
+  <form #loginForm="ngForm">
+    <div class="fields">
+      <div class="field-text">
+        <label for="email">Adresse mail*</label>
+        <input type="email" name="email" id="email" [(ngModel)]="initialLoginRequest.email" required #email="ngModel">
+      </div>
+      <div class="field-text">
+        <label for="password">Mot de passe*</label>
+        <input type="password" name="password" id="password" [(ngModel)]="initialLoginRequest.password" required #password="ngModel">
+      </div>
+    </div>
+    <div class="boutons">
+      <app-custom-button
+          [text]="'Annuler'"
+          [type]="'reset'"
+          [height]="30"
+          [color]="'rgb(226, 225, 225, 0.4)'"
+          [borderRadius]="10"
+          [textSize]="1"
+        ></app-custom-button>
+        <app-custom-button
+          [text]="'Connexion'"
+          [type]="'submit'"
+          [height]="30"
+          [color]="'rgb(27, 213, 27, 0.8)'"
+          [borderRadius]="10"
+          [textSize]="1"
+        ></app-custom-button>
+    </div>
+  </form>
+</div>

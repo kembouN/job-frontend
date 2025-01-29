@@ -1,0 +1,66 @@
+footer{
+  border: 3px solid blue;
+  background-color: rgb(2, 2, 67);
+  color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 300px;
+
+  .logo-info{
+    width: 20%;
+    margin-left: 10%;
+    img{
+      border-radius: 40%;
+      width: 200px;
+      height: 200px;
+    }
+
+    p{
+      font-style: oblique;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
+
+  .links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 45%;
+    margin-right: 10%;
+    .contacts{
+      margin: 50px;
+      flex: 2;
+      span{
+        font-size: 1.1rem;
+        border-bottom: 2px white solid;
+      }
+      .icon{
+        ::ng-deep app-custom-icon p{
+          display: inline;
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .job{
+      margin: 50px;
+      // flex: 3;
+      a{
+        display: block;
+        text-decoration: none;
+        color: white;
+        margin: 15px 0px 30px 0px;
+        height: 5px;
+      }
+      span{
+        margin-bottom: 30px;
+        border-bottom: 2px white solid;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,30 @@
+<footer>
+  <div class="logo-info">
+    <img [src]="images[currentIndex].url" alt="description" srcset="">
+    <p>{{images[currentIndex].description}}</p>
+  </div>
+  <div class="links">
+
+    <div class="contacts">
+      <span>Contacts</span>
+      <p class="icon">
+        <app-custom-icon [class]="'fas fa-phone'" [color]="'white'"></app-custom-icon>
+        (+237) 693 745 998 / 671 340 629
+      </p>
+
+      <p class="icon">
+        <app-custom-icon [class]="'fas fa-envelope'" [color]="'white'"></app-custom-icon>
+        {{teamMail}}
+      </p>
+    </div>
+
+    <div class="job">
+      <span>Liens utiles</span>
+      <a href="#">Des jobs pour vous</a>
+      <a href="#">Les plus populaires</a>
+      <a href="#">Les plus recent</a>
+      <a href="#">Faites des rencontres</a>
+    </div>
+
+  </div>
+</footer>

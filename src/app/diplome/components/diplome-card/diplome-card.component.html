@@ -1,0 +1,19 @@
+<div class="diplome-card">
+  <div class="card-info">
+    <app-custom-icon id="diplome" [class]="'fas fa-graduation-cap'"></app-custom-icon>
+    <div class="diplome-info">
+      <p class="diplome-libelle">{{diplomeLibelle()}}</p>
+      <p class="diplome-code">{{diplomeCode()}}</p>
+    </div>
+    <p>{{diplomeDate()}}</p>
+  </div>
+
+
+
+  <app-custom-button
+    [type]="'button'"
+    [borderRadius]="buttonBorder"
+    [width]="buttonWidth"
+    [color]="buttonColor"
+  ><app-custom-icon [id]="'trash'" [class]="iconClass" [color]="iconColor"></app-custom-icon></app-custom-button>
+</div>

@@ -1,0 +1,65 @@
+
+header{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(226, 225, 225);
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  .name-logo{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 5rem;
+  }
+  .logo{
+    background-color: rgba(0, 177, 0, 0.671);
+    padding: 5px;
+    border-radius: 50%;
+    color: white;
+    margin-right: 10px;
+  }
+
+  .account-links{
+    display: flex;
+    justify-content: space-between;
+    width: 18%;
+
+    .account-type{
+      display: flex;
+      flex-direction: column;
+
+    }
+
+    p{
+      :hover{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(0, 177, 0, 0.671);
+        height: 30px;
+      }
+    }
+  }
+
+}
+a{
+  display: block;
+  :hover{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 177, 0, 0.671);
+    height: 30px;
+  }
+
+  .account-type{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    ::ng-deep app-custom-button .custom-default{
+      :hover{
+        background-color: rgba(0, 177, 0, 0.671);
+      }
+    }
+  }
+}

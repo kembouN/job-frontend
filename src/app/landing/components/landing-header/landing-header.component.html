@@ -1,0 +1,56 @@
+
+<header>
+  <div class="name-logo">
+    <span class="logo">JF.</span>
+    <span class="name">jobfinder</span>
+  </div>
+  <div class="account-links">
+
+    <div class="account">
+      <a >
+        <app-custom-button
+          [text]="'Rejoignez-nous'"
+          [type]="'button'"
+          [height]="30"
+          [color]="'rgb(226, 225, 225, 0.1)'"
+          [borderRadius]="10"
+          [textSize]="1"
+        ></app-custom-button>
+      </a>
+      <div class="account-type">
+        <a href="#"><app-custom-button
+          title="Créez un compte entreprise"
+          [text]="'Entreprise'"
+          [type]="'button'"
+          [height]="30"
+          [color]="'rgb(226, 225, 225, 0.1)'"
+          [borderRadius]="10"
+          [textSize]="1"
+          [style.display]="displayProp"
+        ></app-custom-button></a>
+        <a href="#"><app-custom-button
+          title="Créez un compte utilisateur"
+          [text]="'Finder'"
+          [type]="'button'"
+          [height]="30"
+          [color]="'rgb(226, 225, 225, 0.1)'"
+          [borderRadius]="10"
+          [textSize]="1"
+          [style.display]="displayProp"
+        ></app-custom-button></a>
+      </div>
+    </div>
+
+    <a href="#" title="connexion">
+      <app-custom-button
+        [type]="'button'"
+        [text]="'Connectez-vous'"
+        [height]="30"
+        [color]="'rgb(226, 225, 225, 0.1)'"
+        [borderRadius]="10"
+        [textSize]="1"
+
+      ></app-custom-button>
+    </a>
+  </div>
+</header>

@@ -1,0 +1,15 @@
+.landing-content{
+  .job{
+
+    .recommandation{
+      overflow-x: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    .recent{
+      overflow-x: auto;
+    }
+  }
+}

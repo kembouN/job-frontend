@@ -7,7 +7,8 @@
           type="text"
           (change)="onChange($event)"
           name="libelle" id="libelle"
-          required [(ngModel)]="initialDiplome.libelle"
+          required
+          [(ngModel)]="initialDiplome.libelle"
           [placeholder]="placeHolderLibelle"
           [style.height.px]="inputHeight"
           [style.width.px]="inputWidth"

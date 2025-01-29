@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="left-side">
+    <p class="logo">
+      <span>JF.</span>JobFinder.
+    </p>
+  </div>
+  <div class="rigth-side">
+    <form #registerForm="ngForm" >
+      <div class="fields">
+        <div class="field-group">
+          <div class="field-box">
+            <label for="name">Nom*</label>
+            <input type="text" id="name" [(ngModel)]="initialUser.nom" name="nom" required #nom="ngModel" class="field-text">
+            @if (nom.invalid && (nom.dirty || nom.touched)) {
+              @if (nom.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" [(ngModel)]="initialUser.prenom" name="prenom" #prenom="ngModel" class="field-text">
+            @if (prenom.invalid && (prenom.dirty || prenom.touched)) {
+              @if (prenom.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="username">Adresse courrier*</label>
+            <input type="email" id="username" [(ngModel)]="initialUser.username" name="username" required #username="ngModel" class="field-text">
+            @if (username.invalid && (username.dirty || username.touched)) {
+              @if (username.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="password">Mot de passe*</label>
+            <input type="password" id="password" [(ngModel)]="initialUser.password" name="password" required #password="ngModel" class="field-text">
+            @if (password.invalid && (password.dirty || password.touched)) {
+              @if (password.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="c_password">Confirmer le mot de passe*</label>
+            <input type="password" id="c_password" [(ngModel)]="initialUser.cPassword" name="c_password" required #cPassword="ngModel" class="field-text">
+            @if (cPassword.invalid && (cPassword.dirty || cPassword.touched)) {
+              @if (cPassword.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+        </div>
+        <div class="field-group">
+          <div class="field-box">
+            <label for="pays">Pays*</label>
+            <input type="text" id="pays" [(ngModel)]="initialUser.pays" name="pays" required #pays="ngModel" class="field-text">
+            @if (pays.invalid && (pays.dirty || pays.touched)) {
+              @if (pays.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="ville">Ville*</label>
+            <input type="text" id="ville" [(ngModel)]="initialUser.ville" name="ville" required #ville="ngModel" class="field-text">
+            @if (ville.invalid && (ville.dirty || ville.touched)) {
+              @if (ville.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="birthday">Date de naissance*</label>
+            <input type="date" id="birthday" [(ngModel)]="initialUser.birthDay" name="birthday" required #birthday="ngModel" class="field-text">
+            @if (birthday.invalid && (birthday.dirty || birthday.touched)) {
+              @if (birthday.hasError('required')) {<p class="error-message">Ce champ est requis</p>}
+            }
+          </div>
+          <div class="field-box">
+            <label for="sex">Sexe*</label>
+            <input type="text" id="sex" [(ngModel)]="initialUser.sexe" name="sex" required #sex="ngModel" class="field-text">
+          </div>
+          <div class="field-box">
+            <label for="numtel">Numéro de téléphone*</label>
+              <input type="tel" id="numtel" [(ngModel)]="initialUser.numTel" name="numtel" required #numtel="ngModel" class="field-text">
+          </div>
+        </div>
+      </div>
+      <div class="form-button">
+        <app-custom-button
+          [text]="'Annuler'"
+          [type]="'reset'"
+          [height]="40"
+          [color]="'rgb(226, 225, 225, 0.5)'"
+          [borderRadius]="10"
+          [textSize]="1"
+
+        ></app-custom-button>
+        <app-custom-button
+          [text]="'Soumettre'"
+          [type]="'submit'"
+          [height]="40"
+          [color]="'rgb(27, 213, 27, 0.8)'"
+          [borderRadius]="10"
+          [textSize]="1"
+          (onClick)="onSubmit()"
+        ></app-custom-button>
+      </div>
+    </form>
+  </div>
+</div>
+
