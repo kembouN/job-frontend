@@ -1,15 +1,16 @@
 .landing-content{
   .job{
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 
-    .recommandation{
-      overflow-x: auto;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: space-between;
-    }
-    .recent{
-      overflow-x: auto;
-    }
+  .landing-users{
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
 }

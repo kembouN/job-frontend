@@ -1,4 +1,4 @@
-<div class="job()-block">
+<div class="job-block">
   <div class="head-info">
     <div class="sub-head">
       @if (!job().recruiterImage) {
@@ -7,24 +7,24 @@
         <app-custom-image [source]="job().recruiterImage" [alt]="job().recruiter" [width]="imageWidth()" [height]="imageHeight()" [borderRadius]="imageBorderRadius()"></app-custom-image>
       }
       <p class="head-text">
-        <span class="enterp-name">{{job().recruiter}}</span> <br> <span class="small-info">{{job().localisation.at(0)}}</span>
+        <span class="enterp-name">{{job().recruiter}}</span> <br> <span class="small-info">{{job().localisation.at(0)?.ville}}</span>
       </p>
     </div>
-    <app-custom-icon [class]="'fas fa-bookmark save'"></app-custom-icon>
+    <button name="button" type="button" title="Enregistrer ce job"><i class="fas fa-bookmark save"></i></button>
   </div>
 
-  <div class="job()-info">
+  <div class="job-info">
     <p>
-      <span class="job()-title">{{job().jobTitle}}</span> <br> <span class="small-info">{{job().uploadDate}}</span>
+      <span class="job-title">{{job().jobTitle }}</span> <br> <span class="small-info">{{job().uploadDate}}</span>
     </p>
     <p>
-      <span class="salary">{{job().salary}}</span>/m <br> <span class="small-info">{{job().totalCandidat}}</span>
+      @if(job().salary){<span class="salary">{{job().salary}}</span>/m} <br> <span class="small-info">{{job().totalCandidat}} candidat(s)</span>
     </p>
   </div>
 
   <div class="footer-info">
-    <p>{{job().isFullTime}}</p>
-    <p>{{job().isRemote}}</p>
-    <p>{{job().levels.at(0)?.libelle}}</p>
+    @if(job().isFullTime){<p>Temps plein</p>}@else{<p>Temps partiel</p>}
+    @if(job().isRemote){<p>A distance</p>}@else{<p>Sur site</p>}
+    <p>{{job().levels.at(0)?.diplome?.libelle}}</p>
   </div>
 </div>

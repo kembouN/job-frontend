@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { JobResponse } from '../../../job/models/job';
+import { Component, input, linkedSignal } from '@angular/core';
 import { JobCardComponent } from '../../../job/components/job-card/job-card.component';
+import { JobResponse } from '../../../job/models/job';
 
 @Component({
   selector: 'app-landing-content',
@@ -10,7 +10,7 @@ import { JobCardComponent } from '../../../job/components/job-card/job-card.comp
 })
 export class LandingContentComponent {
 
-  job!: JobResponse[];
-
+  jobs = input.required<JobResponse[]>();
+  _jobs = linkedSignal(this.jobs);
   
 }

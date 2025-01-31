@@ -1,6 +1,5 @@
 import { Component, input, linkedSignal, output } from '@angular/core';
 import { CustomButtonComponent } from "../custom-button/custom-button.component";
-import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-custom-modal',

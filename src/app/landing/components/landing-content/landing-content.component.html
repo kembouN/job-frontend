@@ -1,11 +1,10 @@
 <div class="landing-content">
   <div class="job">
-    <div class="recommandation">
-      
-    </div>
-    <div class="recent">
-
-    </div>
+    @if(jobs()){
+      @for (job of jobs(); track job.jobId) {
+        <app-job-card [job]="job"></app-job-card>
+      }
+    }
   </div>
 
   <div class="landing-users">

@@ -3,9 +3,10 @@
   flex-direction: column;
   background-color: rgb(226, 225, 225, 0.4);
   border-radius: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  width: 20%;
+  padding-left: 5px;
+  padding-right: 5px;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 .head-info, .job-info{
@@ -13,6 +14,16 @@
   flex-direction: row;
   justify-content: space-between;
   padding-right: 10px;
+}
+
+.head-info{
+  button{
+    padding: 0px;
+    border: none;
+    height: 10%;
+    margin-top: 20px;
+    cursor: pointer;
+  }
 }
 .sub-head{
   display: flex;
@@ -24,7 +35,7 @@
 }
 .enterp-name, .job-title, .salary{
   font-weight: bold;
-  font-size: larger;
+  font-size: 1rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -40,11 +51,13 @@
     border-radius: 5px;
     text-align: center;
     padding: 5px;
+    margin: 5px;
+    align-self: center;
   }
 }
 
 .small-info{
-  font-size: small;
+  font-size: 0.7rem;
   opacity: 0.4;
 }
 

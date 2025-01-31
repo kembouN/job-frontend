@@ -1,0 +1,156 @@
+<div class="landing-page">
+<!-- HEADER DE LA PAGE D'ACCUEIL -->
+  <header>
+    <div class="name-logo">
+      <span class="logo">JF.</span>
+      <span class="name">jobfinder</span>
+    </div>
+    <div class="research">
+      <input type="text" placeholder="Poste, job..." name="jobTitle">
+      <button type="button" name="searchButton"><i class="fas fa-search"></i></button>
+    </div>
+    <div class="account-links">
+
+      <div class="account">
+        <a >
+          <app-custom-button
+            [text]="'Rejoignez-nous'"
+            [type]="'button'"
+            [height]="30"
+            [color]="'rgb(226, 225, 225, 0.1)'"
+            [borderRadius]="10"
+            [textSize]="1"
+          ></app-custom-button>
+        </a>
+        <div class="account-type">
+          <a href="#"><app-custom-button
+            title="Créez un compte entreprise"
+            [text]="'Entreprise'"
+            [type]="'button'"
+            [height]="30"
+            [color]="'rgb(226, 225, 225, 0.1)'"
+            [borderRadius]="10"
+            [textSize]="1"
+            [style.display]="displayProp"
+          ></app-custom-button></a>
+          <a href="#"><app-custom-button
+            title="Créez un compte utilisateur"
+            [text]="'Finder'"
+            [type]="'button'"
+            [height]="30"
+            [color]="'rgb(226, 225, 225, 0.1)'"
+            [borderRadius]="10"
+            [textSize]="1"
+            [style.display]="displayProp"
+          ></app-custom-button></a>
+        </div>
+      </div>
+
+      <a href="#" title="connexion">
+        <app-custom-button
+          [type]="'button'"
+          [text]="'Connectez-vous'"
+          [height]="30"
+          [color]="'rgb(226, 225, 225, 0.1)'"
+          [borderRadius]="10"
+          [textSize]="1"
+
+        ></app-custom-button>
+      </a>
+    </div>
+  </header>
+
+<!-- HEADER DE LA PAGE D'ACCUEIL -->
+
+<!-- CONTENU PRINCIPAL DE LA PAGE D'ACCUEIL -->
+
+<div class="landing-content">
+  <div class="job">
+    <div class="sub-job">
+      <div class="recom">
+        <p>Nos recommandations</p>
+        @if(jobs){
+          <div class="job-list">
+            @for (job of jobs; track job.jobId) {
+              <app-job-card [job]="job"></app-job-card>
+            }
+          </div>
+        }
+        @else {
+          <div class="empty-job">
+            <app-custom-icon [class]="'fas fa-'"></app-custom-icon> Aucun job disponible
+          </div>
+        }
+      </div>
+
+      <div class="recent">
+        <p>Les plus récents</p>
+        @if(jobs){
+          <div class="job-list">
+            @for (job of jobs; track job.jobId) {
+              <app-job-card [job]="job"></app-job-card>
+            }
+          </div>
+        }@else {
+          <div class="empty-job">
+            <app-custom-icon [class]="'fas fa-'"></app-custom-icon> Aucun job disponible
+          </div>
+        }
+      </div>
+
+      <div class="finders">
+        <p>Découvrez des collègues</p>
+        @if(finders){
+          <div class="user-list">
+            @for (finder of finders; track finder.nom) {
+
+            }
+          </div>
+        }
+        @else {
+          <div class="empty-job">
+            <app-custom-icon [class]="'fas fa-'"></app-custom-icon> Aucun finder trouvé
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTENU PRINCIPAL DE LA PAGE D'ACCUEIL -->
+
+<!-- FOOTER DE LA PAGE D'ACCUEIL -->
+  <footer>
+    <div class="logo-info">
+      <img [src]="images[currentIndex].url" alt="description" srcset="">
+      <p>{{images[currentIndex].description}}</p>
+    </div>
+    <div class="links">
+
+      <div class="contacts">
+        <span>Contacts</span>
+        <p class="icon">
+          <app-custom-icon [class]="'fas fa-phone'" [color]="'white'"></app-custom-icon>
+          (+237) 693 745 998 / 671 340 629
+        </p>
+
+        <p class="icon">
+          <app-custom-icon [class]="'fas fa-envelope'" [color]="'white'"></app-custom-icon>
+          {{teamMail}}
+        </p>
+      </div>
+
+      <div class="job">
+        <span>Liens utiles</span>
+        <a href="#">Des jobs pour vous</a>
+        <a href="#">Les plus populaires</a>
+        <a href="#">Les plus recent</a>
+        <a href="#">Faites des rencontres</a>
+      </div>
+
+    </div>
+  </footer>
+
+</div>

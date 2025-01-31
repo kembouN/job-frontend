@@ -6,7 +6,7 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 300px;
+  align-items: baseline;
 
   .logo-info{
     width: 20%;

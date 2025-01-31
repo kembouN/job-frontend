@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, linkedSignal, output } from '@angular/core';
 import { JobResponse } from '../../models/job';
 import { CustomIconComponent } from '../../../shared/components/custom-icon/custom-icon.component';
 import { CustomImageComponent } from '../../../shared/components/custom-image/custom-image.component';
