@@ -29,7 +29,7 @@ export class RegisterComponent {
   };
 
   onSubmit(){
-    console.log(this.initialUser);
+    
   }
 
 }

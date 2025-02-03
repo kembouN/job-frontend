@@ -1,4 +1,4 @@
-import { Component, input, linkedSignal, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { JobResponse } from '../../models/job';
 import { CustomIconComponent } from '../../../shared/components/custom-icon/custom-icon.component';
 import { CustomImageComponent } from '../../../shared/components/custom-image/custom-image.component';
@@ -15,4 +15,5 @@ export class JobCardComponent {
   imageHeight= input<number>();
   imageBorderRadius= input<number>();
   job = input.required<JobResponse>();
+  onClick = output();
 }

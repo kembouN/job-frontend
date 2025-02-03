@@ -21,5 +21,6 @@ export class CustomButtonComponent {
   color = input<string>();
   borderRadius = input<number>();
   onClick = output();
+  onHover = output();
 
 }

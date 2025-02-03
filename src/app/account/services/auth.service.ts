@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { LoginRequest, LoginResponse } from '../models/auth';
 import { environment } from '../../../environments/environment.development';
 import { ApiResponse } from '../../shared/models/api-response';
+import { RegisterFinder } from '../../finder/models/finder';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,8 @@ export class AuthService {
     return response$;
   }
 
-
+  finderRegistration(data: RegisterFinder){
+    return this.http.post(`${this.apiBaseUrl}/job`, data);
+  }
 
 }

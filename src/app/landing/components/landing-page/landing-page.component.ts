@@ -5,6 +5,8 @@ import { CustomButtonComponent } from "../../../shared/components/custom-button/
 import { JobCardComponent } from "../../../job/components/job-card/job-card.component";
 import { CustomIconComponent } from "../../../shared/components/custom-icon/custom-icon.component";
 import { FinderResponse } from '../../../finder/models/finder';
+import { RouterLinkActive, RouterLink } from '@angular/router';
+import { JobDetailsComponent } from "../../../job/components/job-details/job-details.component";
 
 interface LandingImageSlide{
   url: string,
@@ -13,7 +15,7 @@ interface LandingImageSlide{
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CustomButtonComponent, JobCardComponent, CustomIconComponent],
+  imports: [CustomButtonComponent, JobCardComponent, CustomIconComponent, RouterLinkActive, RouterLink, JobDetailsComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss'
 })
@@ -36,9 +38,11 @@ export class LandingPageComponent implements OnInit{
   intervalId: any;
 
   jobTitle = "";
+  displayDetails = false;
 
 
   jobs!: JobResponse[];
+  selectedJob!: JobResponse;
   finders!: FinderResponse[];
 
   ngOnInit(): void {
@@ -50,6 +54,20 @@ export class LandingPageComponent implements OnInit{
     }, 3000);
     console.log(this.jobTitle)
   }
+
+  displayAccountButtons(){
+    this.displayProp = this.displayProp == "none" ? "": "none";
+  }
+
+  closeDetails(){
+    this.displayDetails = false;
+  }
+
+  showJobDetails(job: JobResponse){
+    this.selectedJob = job;
+    this.displayDetails = true;
+  }
+
 
 
 }

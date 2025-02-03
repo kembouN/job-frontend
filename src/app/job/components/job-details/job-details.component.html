@@ -1,1 +1,51 @@
-<p>job-details works!</p>
+<div class="container">
+  <header class="job-details-header">
+    <div class="close-title">
+      <button type="button" class="close-button" (click)="closeDetails.emit()">x</button>
+      <p>Détails du job</p>
+    </div>
+    <div class="job-logo-title">
+      @if (job().recruiterImage) {
+        <app-custom-image [source]="job().recruiterImage"></app-custom-image>
+      }@else {
+        <app-custom-icon [class]="'fas fa-user fa-3x'" [color]="'rgb(226, 225, 225, 0.9)'"></app-custom-icon>
+      }
+      <p class="job-title">{{job().jobTitle}}</p>
+      <p class="location-enterp"> {{job().recruiter}}/ {{job().localisation.at(0)?.ville}}, {{job().localisation.at(0)?.pays}}</p>
+    </div>
+
+  </header>
+  <div class="job-type">
+    <p><span class="small-info">Type de job</span> <br> <span>Temps plein</span></p>
+    <p><span class="small-info">Model de travail</span> <br> <span>Sur site</span></p>
+    <p><span class="small-info">Niveau d'expérience</span> <br> <span>Débutant</span></p>
+    <p><span class="small-info">Salaire</span> <br> <span>200000</span></p>
+  </div>
+
+  <div class="job-details">
+    <div class="description">
+      <p class="part-title">Description</p>
+      <p>
+        {{job().jobDescription}}
+      </p>
+    </div>
+    <div class="job-exigence">
+      <p class="part-title">Exigences</p>
+      <ul>
+        @for (exigence of job().exigences; track exigence.exigenceId) {
+          <li>{{exigence.description}}</li>
+        }
+      </ul>
+    </div>
+    <div class="job-mission">
+      <p class="part-title">Missions</p>
+      <ul>
+        @for (mission of job().missions; track mission.missionId) {
+          <li>{{mission.description}}</li>
+        }
+      </ul>
+    </div>
+  </div>
+
+  <app-custom-button [type]="'button'" [text]="'Postulez maintenant au job'" [textSize]="1" [color]="'rgba(0, 177, 0, 0.671)'" [height]="40"></app-custom-button>
+</div>

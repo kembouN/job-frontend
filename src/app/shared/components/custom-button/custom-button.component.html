@@ -11,6 +11,7 @@
   [style.margin-top.px]="top()"
   [style.border-radius.%]="borderRadius()"
   (click)="onClick.emit()"
+  (mouseover)="onHover.emit()"
 >
   @if (text()){
     {{text()}}

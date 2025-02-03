@@ -1,0 +1,72 @@
+.container{
+  width: 30%;
+  overflow-y: auto;
+  padding: 10px;
+  border-top: 5px rgb(226, 225, 225, 0.8) solid;
+  border-left: 5px rgb(226, 225, 225, 0.8) solid;
+  border-bottom: 5px rgb(226, 225, 225, 0.8) solid;
+  position: absolute;
+  top: 2%;
+  right: 0%;
+  z-index: 2;
+  background-color: white;
+  box-shadow: 0 4px 10px rgb(226, 225, 225, 0.1);
+
+  .job-details-header{
+    display: flex;
+    flex-direction: column;
+
+    .close-title{
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+
+      .close-button{
+        height: 20px;
+        border-radius: 50%;
+        border: none;
+        background-color: rgb(226, 225, 225, 0.8);
+        cursor: pointer;
+      }
+    }
+    .job-logo-title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .job-title{
+        font-weight: bold;
+        margin-top: -5px;
+        font-size: large;
+      }
+      .location-enterp{
+        font-size: 0.8rem;
+        opacity: 0.3;
+        margin-top: -15px;
+      }
+    }
+  }
+
+  .job-type{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 15%;
+    P{
+      padding: 10px;
+      width: 120px;
+      margin: 10px;
+      background-color: rgb(226, 225, 225, 0.6);
+      border-radius: 5px;
+      font-weight: bold;
+      .small-info{
+        font-size: 0.8rem;
+        opacity: 0.3;
+      }
+    }
+  }
+
+  ::ng-deep app-custom-button .custom-default{
+    margin-left: 30%;
+  }
+
+}

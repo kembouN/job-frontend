@@ -36,10 +36,10 @@ header{
       border: none;
       background-color: white;
       width: 90%;
-      height: 65%;
+      height: 20px;
       &:focus{
         border-radius: 5% 0 0 5%;
-        // outline: solid 2px rgb(27, 213, 27, 0.8);
+        outline: solid 2px rgb(27, 213, 27, 0.8);
         outline:none;
       }
     }
@@ -48,7 +48,7 @@ header{
       border-radius: 0 50% 50% 0;
       border: none;
       background-color: rgb(27, 213, 27, 0.8);
-      height: 95%;
+      height: 30px;
       width: 40px;
       margin-top: 5px;
       margin-left: -4px;
@@ -64,7 +64,7 @@ header{
     .account-type{
       display: flex;
       flex-direction: column;
-
+      position: fixed;
     }
 
     p{
@@ -112,7 +112,6 @@ header{
       flex-wrap: nowrap;
       justify-content: space-between;
       p{
-
         margin-bottom: 0px;
         font-weight: bold;
         font-size: 1.6rem;
