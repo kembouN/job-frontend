@@ -38,11 +38,12 @@ export interface JobResponse{
   typeContrat: TypeContrat;
   jobDescription: string;
   delai: Date;
+  uploadDate: Date;
   exigences: Exigence[];
   missions: Mission[];
   levels: NiveauRequis[];
   localisation: Localisation[]
-  uploadDate: Date;
+
 }
 
 export interface Job{

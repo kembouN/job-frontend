@@ -61,12 +61,6 @@ header{
     justify-content: space-between;
     width: 18%;
 
-    .account-type{
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-    }
-
     p{
       :hover{
         padding: 10px;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { booleanAttribute, Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -7,8 +7,13 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss'
 })
-export class SideBarComponent {
+export class SideBarComponent implements OnInit{
 
-
+  isAdmin!: boolean;
+  isEnterprise!: boolean;
+  ngOnInit(): void {
+    this.isAdmin = booleanAttribute(localStorage.getItem("admin"));
+    this.isEnterprise = booleanAttribute(localStorage.getItem("enterprise"));
+  }
 
 }

@@ -14,4 +14,5 @@ export interface UserDto{
   dateNaissance: Date,
   sexe: string,
   telephone: number
+  profilePic: Blob
 }

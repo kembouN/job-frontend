@@ -1,0 +1,52 @@
+.sibe-bar-contenair
+{
+  width: 20%;
+  padding: 5px;
+  .header{
+    height: 50px;
+    width: auto;
+    padding: 10px;
+    margin-left: 20%;
+    margin-top: 10px;
+    .name-logo{
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 1.7rem;
+      font-weight: bold;
+      .logo{
+        background-color: rgba(0, 177, 0, 0.671);
+        padding: 5px;
+        border-radius: 50%;
+        color: white;
+        margin-right: 10px;
+      }
+    }
+
+  }
+
+  .pages-links{
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    p{
+      text-align: center;
+      background-color: rgb(226, 225, 225, 0.3);
+      font-size: large;
+      padding: 10px;
+      &:hover{
+        background-color: rgba(0, 177, 0, 0.671);
+      }
+      // &:active{
+      //   background-color: rgba(0, 177, 0, 0.671);
+      // }
+
+      .link{
+        text-decoration: none;
+        color: black;
+        :active{
+          background-color: rgba(0, 177, 0, 0.671);
+        }
+      }
+    }
+
+  }
+}

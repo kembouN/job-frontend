@@ -20,7 +20,7 @@ export class AuthService {
       localStorage.setItem("finderToken", res.content.token);
       localStorage.setItem("finderId", res.content.user.finderId.toString())
       localStorage.setItem("userId", res.content.user.userId.toString())
-      localStorage.setItem("account", res.content.user.isEnterprise.toString())
+      localStorage.setItem("enterprise", res.content.user.isEnterprise.toString())
       localStorage.setItem("admin", res.content.user.isAdmin.toString())
       localStorage.setItem("finderName", res.content.user.nom)
       localStorage.setItem("finderMail", res.content.user.username)
