@@ -15,17 +15,7 @@ export class AuthService {
   constructor(private readonly http: HttpClient) { }
 
   userLogin(data: LoginRequest): Observable<ApiResponse<LoginResponse>> {
-    let response$ = this.http.post<ApiResponse<LoginResponse>>(`${this.apiBaseUrl}/user/login`, data);
-    response$.subscribe(res => {
-      localStorage.setItem("finderToken", res.content.token);
-      localStorage.setItem("finderId", res.content.user.finderId.toString())
-      localStorage.setItem("userId", res.content.user.userId.toString())
-      localStorage.setItem("enterprise", res.content.user.isEnterprise.toString())
-      localStorage.setItem("admin", res.content.user.isAdmin.toString())
-      localStorage.setItem("finderName", res.content.user.nom)
-      localStorage.setItem("finderMail", res.content.user.username)
-    }).unsubscribe();
-    return response$;
+    return this.http.post<ApiResponse<LoginResponse>>(`${this.apiBaseUrl}/user/login`, data);
   }
 
   finderRegistration(data: RegisterFinder){

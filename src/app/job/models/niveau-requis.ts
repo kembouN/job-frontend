@@ -1,4 +1,4 @@
-import { Diplome } from "../../diplome/models/diplome";
+import { Diplome } from "../../contrat-diplome/models/diplome";
 
 
 

@@ -1,4 +1,4 @@
-import { TypeContrat } from "../../type-contrat/models/type-contrat";
+import { TypeContrat } from "../../contrat-diplome/models/type-contrat";
 import { Exigence } from "./exigence";
 import { Localisation } from "./localisation";
 import { Mission } from "./mission";

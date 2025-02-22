@@ -12,4 +12,5 @@ export class CustomIconComponent {
   borderRadius= input<number>();
   class= input<string>();
   color= input<string>();
+  title = input<string>();
 }

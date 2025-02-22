@@ -12,6 +12,14 @@ export const routes: Routes = [
     loadComponent: () => import('./account/component/register/register.component').then(c => c.RegisterComponent)
   },
   {
+    path:"test",
+    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent)
+  },
+  {
+    path:"type-contrat&diplome",
+    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent)
+  },
+  {
     path: "",
     component: LandingPageComponent
   },

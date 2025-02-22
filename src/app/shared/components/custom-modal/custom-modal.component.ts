@@ -13,11 +13,11 @@ export class CustomModalComponent {
   isCentered = input.required<boolean>();
   modalTitle = input.required<string>();
   showChange = output<boolean>();
+  close = output();
   _isVisible = linkedSignal(() => this.isVisible());
 
-  closeModal(){
-    this._isVisible.set(false);
-  }
+  // closeModal(){
+  //   this._isVisible.set(false);
+  // }
 
-  //TODO: manage by adding a open modal's feature
 }
