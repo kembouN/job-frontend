@@ -1,0 +1,56 @@
+<div class="page-container">
+  <app-side-bar></app-side-bar>
+  <div class="page-content">
+    <header>
+      <div class="user-name">
+        <span>{{name}}</span>
+        <img [src]="" alt="">
+      </div>
+    </header>
+    <div class="content">
+      <div class="description">
+        <p>Les types de contrat</p>
+        <app-custom-button
+          [type]="'button'"
+          [text]="'+ Ajouter'"
+          [borderRadius]="5"
+          [textSize]= 1.1
+          [color]="'rgba(0, 177, 0, 0.671)'"
+          [height]="30"
+          [top]="25"
+          (onClick)="openTypeContratForm()"
+        ></app-custom-button>
+      </div>
+      <div id="contrat-group" class="data-group">
+
+        @for (contrat of contrats; track contrat.typeContratId) {
+          <app-type-contrat-card [contrat]="contrat"></app-type-contrat-card>
+        }
+      </div>
+
+      <div class="description">
+        <p>Les diplomes</p>
+        <app-custom-button
+          [type]="'button'"
+          [text]="'+ Ajouter'"
+          [borderRadius]="5"
+          [textSize]= 1.1
+          [color]="'rgba(0, 177, 0, 0.671)'"
+          [height]="30"
+          [top]="25"
+          (onClick)="openDiplomeForm()"
+        ></app-custom-button>
+      </div>
+      <div id="diplome-group" class="data-group">
+
+        @for (diplome of diplomes; track diplome.diplomeId) {
+          <app-diplome-card [diplome]="diplome"></app-diplome-card>
+        }
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-custom-modal [isVisible]="diplomeFormOpened" [isCentered]="true" [modalTitle]="modalDiplomeTitle" (close)="closeDiplomeModal()"><app-diplome-form></app-diplome-form></app-custom-modal>
+
+<app-custom-modal [isCentered]="true" [isVisible]="contratFormOpened" [modalTitle]="modalContratTitle" (close)="closeContratModal()"><app-type-contrat-form></app-type-contrat-form></app-custom-modal>

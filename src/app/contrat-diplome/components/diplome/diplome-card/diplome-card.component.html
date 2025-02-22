@@ -1,0 +1,20 @@
+<div class="diplome-card">
+  <div class="card-info">
+    <app-custom-icon id="diplome" [class]="'fas fa-cap'"></app-custom-icon>
+    <div class="diplome-info">
+      <p class="diplome-libelle">{{diplome().libelle}}</p>
+      <p class="diplome-code">{{diplome().code}}</p>
+    </div>
+    <p>{{diplome().createdDate}}</p>
+  </div>
+
+
+
+  <app-custom-button
+    [type]="'button'"
+    [borderRadius]="buttonBorder"
+    [width]="buttonWidth"
+    [color]="buttonColor"
+    (onClick)="deleteDiplome(diplome().diplomeId)"
+  ><app-custom-icon [id]="'trash'" [class]="iconClass" [color]="iconColor" [title]="'Supprimer'"></app-custom-icon></app-custom-button>
+</div>

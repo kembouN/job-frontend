@@ -1,0 +1,31 @@
+
+.contrat-card{
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 10px;
+  height: 120px;
+  justify-content: space-between;
+  border-radius: 5%;
+  background-color: rgb(226, 225, 225, 0.5);
+
+  .contrat-libelle{
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .contrat-code{
+    margin-top: 0;
+    font-size: smaller;
+  }
+}
+
+::ng-deep app-custom-button .custom-default {
+  ::ng-deep app-custom-icon .poubelle{
+    cursor: pointer;
+  }
+}
+
+#contrat{
+  color:rgba(0, 177, 0, 0.671);
+}

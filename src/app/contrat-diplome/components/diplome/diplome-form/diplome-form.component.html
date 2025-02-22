@@ -1,0 +1,76 @@
+<form #diplomeForm="ngForm" (ngSubmit)="addDiplome() ">
+  <div class="fields">
+    <div>
+      <label for="libelle">Libellé du diplôme @if(required){ <span>*</span>}</label>
+      <input
+        type="text"
+        (change)="onChange($event)"
+        name="libelle" id="libelle"
+        required
+        [(ngModel)]="initialDiplome.libelle"
+        [placeholder]="placeHolderLibelle"
+        [style.height.px]="inputHeight"
+        [style.width.px]="inputWidth"
+        #libelle="ngModel"
+      >
+      @if(libelle.invalid && (libelle.dirty || libelle.touched)){
+        <div>
+          @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+        </div>
+      }
+    </div>
+    <div>
+      <label for="code">Code du diplôme @if(required){ <span>*</span>}</label>
+      <input
+        type="text"
+        (change)="onChange($event)"
+        name="code"
+        id="code"
+        required
+        [placeholder]="placeHolderCode"
+        [(ngModel)]="initialDiplome.code"
+        [style.height.px]="inputHeight"
+        [style.width.px]="inputWidth"
+        #code="ngModel"
+      >
+      @if(code.invalid && (code.dirty || code.touched)){
+        <div>
+          @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+        </div>
+      }      </div>
+  </div>
+
+  <p>{{message}}</p>
+
+  <div class="boutons">
+    <app-custom-button
+      [type]="typeReset"
+      [textSize]="textSize"
+      [disabled]="disableButton"
+      [width]="buttonCancelWidth"
+      [height]="buttonHeight"
+      [left]="marginCancelButtonLeft"
+      [rigth]="marginButtonRigth"
+      [bottom]="marginButtonBottom"
+      [top]="marginButtonTop"
+      [color]="cancelButtonColor"
+      [text]="cancel"
+      [borderRadius]="buttonBorderRadius"
+    ></app-custom-button>
+    <app-custom-button
+      [type]="typeSubmit"
+      [textSize]="textSize"
+      [disabled]="disableSubmit"
+      [width]="buttonSubmitWidth"
+      [height]="buttonHeight"
+      [left]="marginSubmitButtonLeft"
+      [rigth]="marginButtonRigth"
+      [bottom]="marginButtonBottom"
+      [top]="marginButtonTop"
+      [color]="submitButtonColor"
+      [text]="save"
+      [borderRadius]="buttonBorderRadius"
+      (onClick)="addDiplome()"
+    ></app-custom-button>
+  </div>
+</form>

@@ -1,0 +1,74 @@
+<form #diplomeForm="ngForm" (ngSubmit)="addTypeContrat() ">
+  <div class="fields">
+    <div>
+      <label for="libelle">Libellé du contrat @if(required){ <span>*</span>}</label>
+      <input
+        type="text"
+        (change)="onChange($event)"
+        name="libelle" id="libelle"
+        required
+        [(ngModel)]="initialContrat.libelle"
+        [placeholder]="placeHolderLibelle"
+        [style.height.px]="inputHeight"
+        [style.width.px]="inputWidth"
+        #libelle="ngModel"
+      >
+      @if(libelle.invalid && (libelle.dirty || libelle.touched)){
+        <div>
+          @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+        </div>
+      }
+    </div>
+    <div>
+      <label for="code">Code du contrat @if(required){ <span>*</span>}</label>
+      <input
+        type="text"
+        (change)="onChange($event)"
+        name="code"
+        id="code"
+        required
+        [placeholder]="placeHolderCode"
+        [(ngModel)]="initialContrat.code"
+        [style.height.px]="inputHeight"
+        [style.width.px]="inputWidth"
+        #code="ngModel"
+      >
+      @if(code.invalid && (code.dirty || code.touched)){
+        <div>
+          @if(libelle.hasError('required')){<p class="error-message"> Ce champ est requis</p>}
+        </div>
+      }      </div>
+  </div>
+
+  <div class="boutons">
+    <app-custom-button
+      [type]="typeReset"
+      [textSize]="textSize"
+      [disabled]="disableButton"
+      [width]="buttonCancelWidth"
+      [height]="buttonHeight"
+      [left]="marginCancelButtonLeft"
+      [rigth]="marginButtonRigth"
+      [bottom]="marginButtonBottom"
+      [top]="marginButtonTop"
+      [color]="cancelButtonColor"
+      [text]="cancel"
+      [borderRadius]="buttonBorderRadius"
+    ></app-custom-button>
+    <app-custom-button
+      [type]="typeSubmit"
+      [textSize]="textSize"
+      [disabled]="disableSubmit"
+      [width]="buttonSubmitWidth"
+      [height]="buttonHeight"
+      [left]="marginSubmitButtonLeft"
+      [rigth]="marginButtonRigth"
+      [bottom]="marginButtonBottom"
+      [top]="marginButtonTop"
+      [color]="submitButtonColor"
+      [text]="save"
+      [borderRadius]="buttonBorderRadius"
+      (onClick)="addTypeContrat()"
+    ></app-custom-button>
+  </div>
+</form>

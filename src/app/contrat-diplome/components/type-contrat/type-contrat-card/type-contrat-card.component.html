@@ -1,0 +1,20 @@
+<div class="contrat-card">
+  <div class="card-info">
+    <app-custom-icon id="contrat" [class]="'fas fa-file'"></app-custom-icon>
+    <div class="contrat-info">
+      <p class="contrat-libelle">{{contrat().libelle}}</p>
+      <p class="contrat-code">{{contrat().code}}</p>
+    </div>
+    <p>{{contrat().uploadDate}}</p> 
+  </div>
+
+
+
+  <app-custom-button
+    [type]="'button'"
+    [borderRadius]="buttonBorder"
+    [width]="buttonWidth"
+    [color]="buttonColor"
+    (onClick)="deleteTypeContrat(contrat().typeContratId)"
+  ><app-custom-icon [id]="'trash'" [class]="iconClass" [color]="iconColor" [title]="'Supprimer'"></app-custom-icon></app-custom-button>
+</div>
