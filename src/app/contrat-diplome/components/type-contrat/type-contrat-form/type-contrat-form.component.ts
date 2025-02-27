@@ -1,5 +1,4 @@
-import { Component, inject, input, linkedSignal } from '@angular/core';
-import { CustomModalComponent } from "../../../../shared/components/custom-modal/custom-modal.component";
+import { Component, inject } from '@angular/core';
 import { CustomButtonComponent } from "../../../../shared/components/custom-button/custom-button.component";
 import { FormsModule } from '@angular/forms';
 import { TypeContratRequest } from '../../../models/type-contrat';
@@ -7,7 +6,7 @@ import { ContratService } from '../../../services/contrat.service';
 
 @Component({
   selector: 'app-type-contrat-form',
-  imports: [CustomModalComponent, CustomButtonComponent, FormsModule],
+  imports: [CustomButtonComponent, FormsModule],
   templateUrl: './type-contrat-form.component.html',
   styleUrl: './type-contrat-form.component.scss'
 })

@@ -7,6 +7,8 @@ import { CustomIconComponent } from "../../../shared/components/custom-icon/cust
 import { FinderResponse } from '../../../finder/models/finder';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { JobDetailsComponent } from "../../../job/components/job-details/job-details.component";
+import { AuthService } from '../../../account/services/auth.service';
+import {jwtDecode} from 'jwt-decode';
 
 interface LandingImageSlide{
   url: string,
@@ -23,6 +25,7 @@ interface LandingImageSlide{
 export class LandingPageComponent implements OnInit{
 
   jobService = inject(JobService);
+  auth = inject(AuthService);
 
   displayProp = "none";
   teamMail:string  = "knk.towork@gmail.com";

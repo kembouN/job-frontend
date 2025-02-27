@@ -2,12 +2,27 @@
   <app-side-bar></app-side-bar>
   <div class="page-content">
     <header>
+      <app-custom-button
+        [text]="'Déconnexion'"
+        [borderRadius]="5"
+        [color]="'rgb(253, 0, 0, 0.4)'"
+        [left]="15"
+        [height]="30"
+        [top]="-5"
+        [type]="'button'"
+      ></app-custom-button>
       <div class="user-name">
         <span>{{name}}</span>
-        <img [src]="" alt="">
+        <img [src]="" alt="profile">
       </div>
+
     </header>
     <div class="content">
+      <p>
+        <app-custom-icon [class]="'fas fa-file-contract'"></app-custom-icon> /
+        <app-custom-icon [class]="'fas fa-graduation-cap'"></app-custom-icon>
+        <span> Type de contrat et diplome</span>
+      </p>
       <div class="description">
         <p>Les types de contrat</p>
         <app-custom-button

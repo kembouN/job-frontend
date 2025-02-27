@@ -10,10 +10,12 @@ import { CustomButtonComponent } from "../../../shared/components/custom-button/
 import { DiplomeFormComponent } from "../diplome/diplome-form/diplome-form.component";
 import { TypeContratFormComponent } from "../type-contrat/type-contrat-form/type-contrat-form.component";
 import { CustomModalComponent } from "../../../shared/components/custom-modal/custom-modal.component";
+import { CustomIconComponent } from "../../../shared/components/custom-icon/custom-icon.component";
+import { AuthService } from '../../../account/services/auth.service';
 
 @Component({
   selector: 'app-contrat-diplome-page',
-  imports: [SideBarComponent, TypeContratCardComponent, DiplomeCardComponent, CustomButtonComponent, DiplomeFormComponent, TypeContratFormComponent, CustomModalComponent],
+  imports: [SideBarComponent, TypeContratCardComponent, DiplomeCardComponent, CustomButtonComponent, DiplomeFormComponent, TypeContratFormComponent, CustomModalComponent, CustomIconComponent],
   templateUrl: './contrat-diplome-page.component.html',
   styleUrl: './contrat-diplome-page.component.scss'
 })
@@ -21,6 +23,7 @@ export class ContratDiplomePageComponent implements OnInit{
 
   contratService = inject(ContratService);
   diplomeService = inject(DiplomeService);
+  auth = inject(AuthService);
   modalDiplomeTitle ="Ajouter un nouveau diplome";
   modalContratTitle ="Ajouter un nouveau type de contrat";
 
@@ -47,10 +50,9 @@ export class ContratDiplomePageComponent implements OnInit{
 
   contrats! : TypeContratResponse[];
   diplomes!: DiplomeResponse[];
-  name = localStorage.getItem("finderMail");
+  name = localStorage.getItem("finderName");
 
   ngOnInit(): void {
-    console.log(localStorage.getItem("finderToken"));
     this.contratService.getAllTypeContrats().subscribe(c => {
       this.contrats = c.content;
     });

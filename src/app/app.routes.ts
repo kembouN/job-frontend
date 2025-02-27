@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { LandingPageComponent } from './landing/components/landing-page/landing-page.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
 
@@ -13,11 +14,13 @@ export const routes: Routes = [
   },
   {
     path:"test",
-    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent)
+    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent),
+    canActivate: [authGuard]
   },
   {
-    path:"type-contrat&diplome",
-    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent)
+    path:"type-contrat-et-diplome",
+    loadComponent: () => import('./contrat-diplome/components/contrat-diplome-page/contrat-diplome-page.component').then(c => c.ContratDiplomePageComponent),
+    // canActivate: [authGuard]
   },
   {
     path: "",

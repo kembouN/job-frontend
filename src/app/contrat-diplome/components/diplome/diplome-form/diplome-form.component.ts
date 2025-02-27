@@ -1,13 +1,12 @@
 import { Component, inject} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CustomButtonComponent } from '../../../../shared/components/custom-button/custom-button.component';
-import { CustomModalComponent } from '../../../../shared/components/custom-modal/custom-modal.component';
 import { DiplomeRequest } from '../../../models/diplome';
 import { DiplomeService } from '../../../services/diplome.service';
 
 @Component({
   selector: 'app-diplome-form',
-  imports: [FormsModule, CustomButtonComponent, CustomModalComponent],
+  imports: [FormsModule, CustomButtonComponent],
   templateUrl: './diplome-form.component.html',
   styleUrl: './diplome-form.component.scss'
 })
